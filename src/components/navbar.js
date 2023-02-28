@@ -1,5 +1,5 @@
 
-import { Box, Button, FormControlLabel, IconButton, Switch, useTheme } from '@mui/material';
+import { Box, Button, FormControlLabel, Switch, useTheme } from '@mui/material';
 import { ColorModeContext, tokens } from "../utils/theme";
 import { useContext, useState } from 'react';
 import '../i18n';
@@ -14,14 +14,14 @@ const theme = useTheme();
   const [lang, setLang] = useState('ar')
   
   const togglelang = () => {
-lang== 'ar' ? setLang('en') : setLang('ar') 
+lang === 'ar' ? setLang('en') : setLang('ar') 
 i18next.changeLanguage(lang).then((t) => {
    
   });
   }
   return (
-    <Box display={'flex'} justifyContent='space-between'>
-       <FormControlLabel control={<Switch  />} label={theme.palette.mode == 'dark' ? 'Dark' : 'Light'}   onChange={colorMode.toggleColorMode} />
+    <Box bgcolor={ colors.redAccent[500]} display={'flex'} justifyContent='space-between'>
+       <FormControlLabel control={<Switch  />} label={theme.palette.mode === 'dark' ? 'Dark' : 'Light'}   onChange={colorMode.toggleColorMode} />
       <Button variant='contained'  onClick={togglelang}>{lang}</Button>
     </Box>
   );

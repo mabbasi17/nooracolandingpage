@@ -11,7 +11,7 @@ function App() {
 
 	
 	const content = useRoutes(LandingpageRoutes);
-const { t, i18n } = useTranslation();
+const {  i18n } = useTranslation();
  document.body.dir =  document.body.dir = i18n.dir();
 	
 	return (
