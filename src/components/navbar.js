@@ -1,15 +1,19 @@
 
-import { Box, FormControlLabel, Switch } from '@mui/material';
-
+import { Box, FormControlLabel, Switch, useTheme } from '@mui/material';
+import { ColorModeContext, tokens } from "../utils/theme";
 import { useContext } from 'react';
-import { ThemeContext } from './../context/themeContext';
+
+
+
 
 
 function NavBar() {
-const {toogletheme} =useContext(ThemeContext)
+const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const colorMode = useContext(ColorModeContext);
   return (
     <Box >
-       <FormControlLabel control={<Switch defaultChecked />} label="Dark Mode"  onChange={toogletheme}/>
+       <FormControlLabel control={<Switch  />} label="Dark Mode"  onChange={colorMode.toggleColorMode} />
 
     </Box>
   );
